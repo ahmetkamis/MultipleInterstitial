@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  S-Snake
 //
 //  Created by Ahmet Kamis on 11/04/18.
 //  Copyright © 2018 Ahmet Kamis. All rights reserved.
