@@ -26,7 +26,7 @@ class ViewController : UIViewController, GADInterstitialDelegate {
         interstitial.load(request)
         
         //that will go until ad gets ready! 
-        var count = 30; //stop at seconds.
+        var count = 0;
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in                                                         
             count += 1
             //ad is ready
