@@ -26,7 +26,9 @@ class ViewController : UIViewController, GADInterstitialDelegate {
         interstitial.load(request)
         
         //that will go until ad gets ready! 
-        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in
+        var count = 30; //stop at seconds.
+        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in                                                         
+            count += 1
             //ad is ready
             if (interstitial.isReady) {
                 //invalidate the timer.
@@ -34,6 +36,10 @@ class ViewController : UIViewController, GADInterstitialDelegate {
                 //show the ad
                 interstitial.present(fromRootViewController: self)
             }
+            //stop it if hits 30 seconds.
+            if (count == 30) {
+                Timer.invalidate()
+            }  
         })
         
         return
